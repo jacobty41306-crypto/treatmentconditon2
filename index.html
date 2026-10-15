@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>iMotions Split-Screen Study</title>
+
+  <!-- iMotions Data Collection Script -->
+  <script type="module"
+    src="https://my.imotions.com/collect/imotions.js">
+  </script>
+
+  <!-- Page Styling -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .panel {
+      width: 50%;
+      height: 100%;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .video-panel {
+      background: #111;
+      color: white;
+    }
+
+    .survey-panel {
+      background: #f4f4f4;
+      border-left: 2px solid #ccc;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .frame {
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      border: none;
+    }
+
+    .video-frame {
+      background: black;
+    }
+
+    .survey-frame {
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- LEFT SIDE: VIDEO -->
+    <section class="panel video-panel">
+      <h2>Video Stimulus</h2>
+
+      <iframe
+        class="frame video-frame"
+        src="https://drive.google.com/file/d/1J8N30sMSOvgNfQ3ooCEuZpIJ8RKzY5Ls/preview?autoplay=1"
+        title="Study Video"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- RIGHT SIDE: GOOGLE FORMS SURVEY -->
+    <section class="panel survey-panel">
+      <h2>Survey Questions</h2>
+
+      <iframe
+        class="frame survey-frame"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe1_aC_A5qhoZZwz-faftWqRzXHtxUkFedp_iuV_vkx9bu4rw/viewform"
+        title="Study Survey">
+      </iframe>
+    </section>
+
+  </main>
+</body>
+</html>
